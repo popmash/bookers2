@@ -1,0 +1,47 @@
+<div class="container pt-3">
+ <div class="row">
+  <div class="col-3">
+   <div class="row">
+    <h1 class="h2 ">User info</h1>
+   </div>
+   <div class="row">
+    <%= image_tag @user.get_profile_image(100,100) %>
+   </div>
+   <div class="row border-top border-bottom pt-2 ">
+      <div class="col-2">
+       <p><strong>name</strong></p>
+      </div>
+       <div class="col">
+        <p class="text-center "><strong><%= @user.name %></strong></p>
+       </div>
+   </div>
+   <div class="row border-top border-bottom pb-4 pt-2">
+     <div class="col-2">
+      <p><strong>introduction</strong></p>
+     </div>
+    <div class="col">
+     <p class="text-center"><strong><%= @user.introduction %></strong></p>
+    </div>
+   </div>
+   <div class="row">
+    <%= link_to edit_user_path(current_user.id) , class: 'btn btn-outline-secondary col' do %>
+     <i class="fas fa-user-cog"></i>
+    <% end %>
+   </div>
+          <%= form_with model: @book_new do |f|%>
+           <h1 class="py-1">New book</h1>
+            <div class="field">
+             <%= f.label :title %><br>
+             <%= f.text_field :title, class: 'form-control' %>
+            </div>
+             <div class="field ">
+              <%= f.label :opinion %><br>
+              <%= f.text_area :body, class: 'form-control' %>
+             </div>
+              <div class="actions text-whit pt-3">
+               <%= f.submit 'Create Book', class:'btn btn- btn-success btn-sm pt-2' %>
+             </div>
+          <% end %>
+ </div>
+
+
