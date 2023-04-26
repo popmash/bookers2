@@ -5,7 +5,7 @@
     <h1 class="h2 ">User info</h1>
    </div>
    <div class="row">
-    <%= image_tag @user.get_profile_image(100,100) %>
+    <%= image_tag user.get_profile_image(100,100) %>
    </div>
    <div class="row border-top border-bottom pt-2 ">
       <div class="col-2">
@@ -28,7 +28,7 @@
      <i class="fas fa-user-cog"></i>
     <% end %>
    </div>
-          <%= form_with model: @book_new do |f|%>
+          <%= form_with model: book_new do |f|%>
            <h1 class="py-1">New book</h1>
             <div class="field">
              <%= f.label :title %><br>
