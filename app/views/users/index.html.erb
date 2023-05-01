@@ -1,4 +1,4 @@
-<%= render 'books/list.index', book_new: @book_new, user: @user %>
+<%= render 'books/list.index', book_new: @book_new %>
   <div class="col-8 offset-1 ">
    <div class="row">
     <h1 class="h2">Users</h1>
@@ -10,7 +10,7 @@
       <th class="col-5 p-2 ">name</th>
       <th class="col p-2"></th>
      </tr>
-      <% @user.each do |user| %>
+      <% @users.each do |user| %>
        <tr class="border-bottom ">
         <td class=""><%= image_tag user.get_profile_image(80,80) %></td>
         <td class=""><%= user.name %></td>

@@ -37,8 +37,10 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-    unless @book.user == current_user
-      redirect_to 'index'
+    if @book.user == current_user
+      render "edit"
+    else
+     redirect_to book_path(@book.id)
     end
   end
 
@@ -55,7 +57,7 @@ class BooksController < ApplicationController
   end
   def baria_user
     unless Book.find(params[:id]).user.id.to_i == current_user.id
-        redirect_to books_path(current_user)
+        redirect_to '/books'
     end
   end
 end
